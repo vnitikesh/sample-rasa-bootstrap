@@ -1,0 +1,93 @@
+version: "2.0"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+
+  - intent: subscribe
+    examples: |
+      - I want to get the newsletter
+      - Can you send me the newsletter?
+      - Can you sign me up for the newsletter?
+      - I want to subscribe to a newsletter.
+
+  - intent: inform_email
+    examples: |
+      - My email is example@example.com
+      - random@example.com
+      - Please send it to anything@example.com
+      - Email is something@example.com
+  - intent: inform_frequency
+    examples: |
+      - every week
+      - once a week
+      - twice per month
+      - as often as possible
+      - once a month
+  - intent: weather
+    examples: |
+      - what's the weather
+      - what is the temperature today
+      - what is the temperature
+      - i want to know the temperature
+      - i want to know the weather of today
+      - tell me the weather forecast
+      - hows the weather today 
+
+  - intent: weather_for_location
+    examples: |
+      - what is the weather in [Noida](location)
+      - what is the weather in [New Delhi](location)
+      - weather of [Mumbai] (location)
+      - Today's weather in [Bangalore](location)
+      - [Kolkata](location) weather
+      - Tell me weather of [Hyderabad](location)
+      - Can you tell me weather of [London](location)
+
+  - intent: city_info
+    examples: |
+      - [New Delhi](location)
+      - [India](location)
+      - [Mumbai](location)
+      - [Noida](location)
+      - [Kolkata](location)
+      - [Bangalore](location)
+      - [London](location)
+
+  - intent: thanks
+    examples: |
+      - thanks
+      - thank you
+      - OK
