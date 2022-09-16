@@ -17,7 +17,7 @@ Main Tech stack: Python, Rasa2.0
 
 <br>
 <h1>Quetions you can ask from chatbot</h1>
-<hr>
-<b>1.</b> hello there?
-<b>2.</b> Subscribe me to newsletter
-<b>3.</b> whats the weather in <city_name>
+
+<b>1.</b> hello there?<br>
+<b>2.</b> Subscribe me to newsletter<br>
+<b>3.</b> whats the weather in <b>city_name</b>
