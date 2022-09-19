@@ -33,6 +33,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 import requests
+import json
 
 class ActionCheckWeather(Action):
 
@@ -43,13 +44,23 @@ class ActionCheckWeather(Action):
         api_key = 'ac6e4a4ad1bad18e08db103d2951e417'
         loc = tracker.get_slot('location')
         current = requests.get('http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'.format(loc, api_key)).json()
-        print(current)
+        # print(current)
         country = current['sys']['country']
         city = current['name']
         condition = current['weather'][0]['main'    ]
         temperature_c = current['main']['temp']
         humidity = current['main']['humidity']
         wind_mph = current['wind']['speed']
-        response = """It is currently {} in {} at the moment. The temperature is {} degrees, the humidity is {}% and the wind speed is {} mph.""".format(condition, city, temperature_c, humidity, wind_mph)
-        dispatcher.utter_message(response)
+        # response = """It is currently {} in {} at the moment. The temperature is {} degrees, the humidity is {}% and the wind speed is {} mph.""".format(condition, city, temperature_c, humidity, wind_mph)
+        response = json.dumps(json.dumps({
+            "condition": condition,
+            "city": city,
+            "temperature": temperature_c,
+            "humidity": humidity,
+            "wind_speed": wind_mph
+        }))
+        try:
+            dispatcher.utter_message(response)
+        except Exception as e:
+            print("Exception:- ",e)
         return [SlotSet('location', loc)]
